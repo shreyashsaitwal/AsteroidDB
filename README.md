@@ -1,6 +1,8 @@
 # AsteroidDB
 A TinyWebDB service but more than TinyWebDB service. AsteroidDB is cloud database that stores and retrieves values for any platform. You can access the database with simple cURL/Web requests. 
 
+[![Deploy](https://www.herokucdn.com/deploy/button.png)](https://heroku.com/deploy?template=https://github.com/yyusufcihan/AsteroidDB/tree/release)
+
 #### Supported Platforms
 
 That's the most exiciting part of TinyWebDB's core. You can use AsteroidDB in every platform (App Inventor, C#, Batch etc.) which supports Web requests.
@@ -13,11 +15,9 @@ Built on top of [Flask](http://flask.pocoo.org/) micro-framework, written in Pyt
 
 This is a cloned and improved project from [pavi2410/TinyDB](https://github.com/pavi2410/TinyWebDB). 
 
-## Installation
+## Usage
 
-AsteroidDB 
-
-[![Deploy](https://www.herokucdn.com/deploy/button.png)](https://heroku.com/deploy?template=https://github.com/yyusufcihan/TinyWebDB/tree/release)
+Refer to [Wiki](https://github.com/yyusufcihan/AsteroidDB/wiki) for installing and usage.
 
 ### Progress
 This the list of features I implemented after forking.
@@ -38,6 +38,3 @@ This the list of features I implemented after forking.
      - [x] Change password: `/auth/password`
      - [x] Delete password: `/auth/unlock`
      - [ ] Users
-
-
-
