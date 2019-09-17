@@ -1,6 +1,6 @@
 {
-  "name": "TinyWebDB",
-  "description": "A web DB service that stores and retrieves values for any app.",
+  "name": "AsteroidDB",
+  "description": "An upgraded version of TinyWebDB. Works everywhere, with more features.",
   "website": "https://yusufcihan.com",
   "repository": "https://github.com/yyusufcihan/TinyWebDB",
   "logo": "https://yusufcihan.com/img/icon.png",
