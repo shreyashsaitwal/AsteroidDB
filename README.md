@@ -1,7 +1,7 @@
 # AsteroidDB
 A TinyWebDB service but more than TinyWebDB service. AsteroidDB is cloud database that stores and retrieves values for any platform. You can access the database with simple cURL/Web requests. 
 
-[![Deploy](https://www.herokucdn.com/deploy/button.png)](https://heroku.com/deploy?template=https://github.com/yyusufcihan/AsteroidDB/tree/release)
+[![Deploy](https://www.herokucdn.com/deploy/button.png)](https://heroku.com/deploy?template=https://github.com/yyusufcihan/AsteroidDB)
 
 #### Supported Platforms
 
