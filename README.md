@@ -7,13 +7,13 @@ It can be installed on [Heroku](https://www.heroku.com/) with one click, if you 
 
 [![Deploy](https://www.herokucdn.com/deploy/button.png)](https://heroku.com/deploy?template=https://github.com/yyusufcihan/AsteroidDB)
 
-#### Supported Platforms
+### Supported Platforms
 
 If your platforms supports Web requests (POST/GET etc.) then AsteroidDB can run safely on your platform.
 
-#### Thanks
+### Thanks
 
-This is a cloned and improved project from [pavi2410/TinyDB](https://github.com/pavi2410/TinyWebDB). 
+This is a cloned and improved project from [pavi2410/TinyWebDB](https://github.com/pavi2410/TinyWebDB). 
 
 ## Usage
 
