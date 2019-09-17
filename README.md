@@ -5,12 +5,14 @@ So welcome to a new generation in database service. If you want a too simple dat
 
 It can be installed on [Heroku](https://www.heroku.com/) with one click, if you don't want to deal with setting up thing (as I did). AsteroidDB is using [Flask](http://flask.pocoo.org/) micro-framework and written in Python, so you can understand that how it is easy to improve the code.
 
+### Get AsteroidDB
+
 [![Deploy](https://www.herokucdn.com/deploy/button.png)](https://heroku.com/deploy?template=https://github.com/yyusufcihan/AsteroidDB)
 
-### Who is AsteroidDB for?
+#### Who is AsteroidDB for?
 
-- For people who wants to create cross-platform apps with same database service. 
- > For example; Google's Firebase is working very well, however, some programming languages still don't support Firebase officially because of libraries. (such as C#)
+- For people who wants to create cross-platform apps with using same database service which doesn't require any 3rd party libraries. 
+ > For example; Google's Firebase is working very well, however, some programming languages still don't support Firebase officially because of libraries. *(such as C#)* But if your app is supporting Web requests like POST, GET etc. Then AsteroidDB will work for you.
  
 - For people who don't wants to deal with setting up database thing. 
  > AsteroidDB supports Heroku's one-click Deploy function, so if you click on the button, a new app will be created from this repo. This means you can just access your web database easily in seconds. 
@@ -18,20 +20,18 @@ It can be installed on [Heroku](https://www.heroku.com/) with one click, if you 
 - For people who wants to build own database with own functions.
 > If you open the `app.py` file you can see there how data is saving to table. Additionally, you can add more functions if you know Python.
 
-### Supported Platforms
-
-If your platforms supports Web requests (POST/GET etc.) then AsteroidDB can run safely on your platform.
-
 ### Thanks
 
 This is a cloned and improved project from [pavi2410/TinyWebDB](https://github.com/pavi2410/TinyWebDB). 
+
+
 
 ## Usage
 
 Refer to [Wiki](https://github.com/yyusufcihan/AsteroidDB/wiki) for installing and usage.
 
 ### Progress
-This the list of features I implemented after forking.
+This the list of features I implemented after cloning the repo.
 
 * **Security**
   * Password Protection
