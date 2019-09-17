@@ -1,17 +1,17 @@
 # AsteroidDB
-A TinyWebDB service but more than TinyWebDB service. AsteroidDB is cloud database that stores and retrieves values for any platform. You can access the database with simple cURL/Web requests. 
+Why people just can't set up a simple and free database for apps/softwares? They are actually just saving values and getting the values by using the tags. So there is no reason to providing an almost impossible solution for creating online database. We are in 2019. 
+
+So welcome to a new generation in database service. If you want a too simple database which only holds string values, then AsteroidDB is for you. It based on TinyWebDB which is an App Inventor component, but with more data managing functions.
+
+It can be installed on [Heroku](https://www.heroku.com/) with one click, if you don't want to deal with setting up thing (as I did). AsteroidDB is using [Flask](http://flask.pocoo.org/) micro-framework and written in Python, so you can understand that how it is easy to improve the code.
 
 [![Deploy](https://www.herokucdn.com/deploy/button.png)](https://heroku.com/deploy?template=https://github.com/yyusufcihan/AsteroidDB)
 
 #### Supported Platforms
 
-That's the most exiciting part of TinyWebDB's core. You can use AsteroidDB in every platform (App Inventor, C#, Batch etc.) which supports Web requests.
+If your platforms supports Web requests (POST/GET etc.) then AsteroidDB can run safely on your platform.
 
-#### Built with
-
-Built on top of [Flask](http://flask.pocoo.org/) micro-framework, written in Python and supports hosting on [Heroku](https://www.heroku.com/).
-
-#### Original source
+#### Thanks
 
 This is a cloned and improved project from [pavi2410/TinyDB](https://github.com/pavi2410/TinyWebDB). 
 
