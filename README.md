@@ -5,6 +5,8 @@ So welcome to a new generation in database service. If you want a too simple dat
 
 It can be installed on [Heroku](https://www.heroku.com/) with one click, if you don't want to deal with setting up thing (as I did). AsteroidDB is using [Flask](http://flask.pocoo.org/) micro-framework and written in Python, so you can understand that how it is easy to improve the code.
 
+You can find everything about AsteroidDB in [Wiki](https://github.com/yyusufcihan/AsteroidDB/wiki).
+
 ### Get AsteroidDB
 
 [![Deploy](https://www.herokucdn.com/deploy/button.png)](https://heroku.com/deploy?template=https://github.com/yyusufcihan/AsteroidDB)
@@ -23,29 +25,3 @@ It can be installed on [Heroku](https://www.heroku.com/) with one click, if you 
 ### Thanks
 
 This is a cloned and improved project from [pavi2410/TinyWebDB](https://github.com/pavi2410/TinyWebDB). 
-
-
-
-## Usage
-
-Refer to [Wiki](https://github.com/yyusufcihan/AsteroidDB/wiki) for installing and usage.
-
-### Progress
-This the list of features I implemented after cloning the repo.
-
-* **Security**
-  * Password Protection
-    * If you set a password for database, then all actions will require a password.
-    * You can delete your password with `/auth/unlock` method.
-    * There is no recovering password method, so don't forget your password!
-        
-* **Methods**
-  * Basics
-     - [x] Store record: `/store`
-     - [x] Get value: `/get`
-     - [ ] Get all tags
-     - [x] Delete record: `/delete`
-  * Auth
-     - [x] Change password: `/auth/password`
-     - [x] Delete password: `/auth/unlock`
-     - [ ] Users
