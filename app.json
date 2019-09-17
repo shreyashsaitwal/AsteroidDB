@@ -1,0 +1,21 @@
+{
+  "name": "TinyWebDB",
+  "description": "A web DB service that stores and retrieves values for any app.",
+  "website": "https://yusufcihan.com",
+  "repository": "https://github.com/yyusufcihan/TinyWebDB",
+  "logo": "https://yusufcihan.com/img/icon.png",
+  "addons": [
+    "heroku-postgresql:hobby-dev"
+  ],
+  "keywords": [
+    "tinywebdb",
+    "makeroid",
+    "android",
+    "python",
+    "flask",
+    "sqlalchemy",
+    "postgresql",
+    "appinventor"
+  ],
+  "generator": "https://www.expeditedssl.com/heroku-button-maker"
+}
