@@ -5,7 +5,7 @@ So welcome to a new generation in database service. If you want a too simple dat
 
 It can be installed on [Heroku](https://www.heroku.com/) with one click, if you don't want to deal with setting up thing (as I did). AsteroidDB is using [Flask](http://flask.pocoo.org/) micro-framework and written in Python, so you can understand that how it is easy to improve the code.
 
-You can find everything about AsteroidDB in [Wiki](https://github.com/yyusufcihan/AsteroidDB/wiki).
+**You can find everything about AsteroidDB in [Wiki](https://github.com/yyusufcihan/AsteroidDB/wiki).**
 
 ### Get AsteroidDB
 
