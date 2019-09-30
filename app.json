@@ -2,7 +2,7 @@
   "name": "AsteroidDB",
   "description": "An upgraded version of TinyWebDB. Works everywhere, with more features.",
   "website": "https://yusufcihan.com",
-  "repository": "https://github.com/yyusufcihan/AsteroidDB",
+  "repository": "https://github.com/ysfchn/AsteroidDB",
   "logo": "https://yusufcihan.com/img/icon.png",
   "addons": [
     "heroku-postgresql:hobby-dev"
