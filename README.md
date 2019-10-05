@@ -9,6 +9,23 @@ It can be installed on [Heroku](https://www.heroku.com/) with one click, if you 
 
 **You can find everything about AsteroidDB in [Wiki](https://github.com/ysfchn/AsteroidDB/wiki).**
 
+## Progress
+Every checkmark presents a method. A checked box means that method is implemented. You can a detailed table about all methods in [this Wiki page](/wiki#current-methods).
+
+- **Store**
+   - [x] Store Record
+- **Get**
+   - [x] Get Value from Tag
+   - [x] Get All Tags
+   - [x] Get All Data *(which contains all tags alongs with values)*
+- **Authorization**
+   - [x] Set/Change Password
+   - [x] Delete/Unlock Password
+- **informational**
+   - [x] Is Locked? *(returns true if database is locked, otherwise false)*
+- **Delete**
+   - [x] Delete Record
+   - [ ] Clear Database
 
 
 ### Get AsteroidDB
