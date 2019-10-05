@@ -146,11 +146,8 @@ def get_all():
         if password != getpassword.value:
             return 'Wrong password!'
         # --------------------
-    tags = TinyWebDB.query(TinyWebDB).all()
-    texts = ''
-    for tag in tags:
-        texts += tag + ','
-    return texts
+    tags = TinyWebDB.query.filter_by().all()
+    return tags
 
 
 # -------------------------
