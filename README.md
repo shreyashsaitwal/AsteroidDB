@@ -12,6 +12,7 @@ It can be installed on [Heroku](https://www.heroku.com/) with one click, if you 
 ## Progress
 Every checkmark presents a method. A checked box means that method is implemented. You can a detailed table about all methods in [this Wiki page](https://github.com/ysfchn/AsteroidDB/wiki#current-methods).
 
+### Methods
 - **Store**
    - [x] Store Record
 - **Get**
@@ -21,12 +22,16 @@ Every checkmark presents a method. A checked box means that method is implemente
 - **Authorization**
    - [x] Set/Change Password
    - [x] Delete/Unlock Password
-- **informational**
+- **Informational**
    - [x] Is Locked? *(returns true if database is locked, otherwise false)*
 - **Delete**
    - [x] Delete Record
    - [ ] Clear Database
 
+### Integrations
+- [ ] App Inventor Extension
+
+***
 
 ### Get AsteroidDB
 
