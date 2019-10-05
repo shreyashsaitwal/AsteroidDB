@@ -10,7 +10,7 @@ It can be installed on [Heroku](https://www.heroku.com/) with one click, if you 
 **You can find everything about AsteroidDB in [Wiki](https://github.com/ysfchn/AsteroidDB/wiki).**
 
 ## Progress
-Every checkmark presents a method. A checked box means that method is implemented. You can a detailed table about all methods in [this Wiki page](/wiki#current-methods).
+Every checkmark presents a method. A checked box means that method is implemented. You can a detailed table about all methods in [this Wiki page](https://github.com/ysfchn/AsteroidDB/wiki#current-methods).
 
 - **Store**
    - [x] Store Record
