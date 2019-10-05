@@ -38,13 +38,13 @@ def store_a_value():
     getpassword = TinyWebDB.query.filter_by(tag='dbpass').first()
     if tag:
         if tag == 'dbpass':
-            return 'Security error: Not possible to do any action to password record!'
+            return jsonify(['ERROR','Not possible to do any action to password record!'])
         else:
             # --------------------
             if getpassword:
                 password = request.form['pass']
                 if password != getpassword.value:
-                    return 'Wrong password!'
+                    return jsonify(['ERROR','Wrong password!'])
             # --------------------
             existing_tag = TinyWebDB.query.filter_by(tag=tag).first()
             if existing_tag:
@@ -55,7 +55,7 @@ def store_a_value():
                 db.session.add(data)
                 db.session.commit()
         return jsonify(['STORED', tag, value])
-    return 'Invalid Tag!'
+    return jsonify(['ERROR','Not found the tag.'])
 
 
 # -------------------------
@@ -68,17 +68,17 @@ def get_value():
     getpassword = TinyWebDB.query.filter_by(tag='dbpass').first()
     if tag:
         if tag == 'dbpass':
-            return 'Security error: Not possible to do any action to password record!'
+            return jsonify(['ERROR','Not possible to do any action to password record!'])
         else:
             # --------------------
             if getpassword:
                 password = request.form['pass']
                 if password != getpassword.value:
-                    return 'Wrong password!'
+                    return jsonify(['ERROR','Wrong password!'])
             # --------------------
             value = TinyWebDB.query.filter_by(tag=tag).first().value
             return jsonify(['GOT', tag, value])
-    return 'Invalid Tag!'
+    return jsonify(['ERROR','Not found the tag.'])
 
 
 # -------------------------
@@ -91,19 +91,19 @@ def delete_entry():
     getpassword = TinyWebDB.query.filter_by(tag='dbpass').first()
     if tag:
         if tag == 'dbpass':
-            return 'Security error: Not possible to do any action to password record!'
+            return jsonify(['ERROR','Not possible to do any action to password record!'])
         else:
             # --------------------
             if getpassword:
                 password = request.form['pass']
                 if password != getpassword.value:
-                    return 'Wrong password!'
+                    return jsonify(['ERROR','Wrong password!'])
             # --------------------
             deleted = TinyWebDB.query.filter_by(tag=tag).first()
             db.session.delete(deleted)
             db.session.commit()
             return jsonify(['DELETED', tag])
-    return 'Not found the tag!'
+    return jsonify(['ERROR','Not found the tag.'])
 
 
 # -------------------------
@@ -124,18 +124,42 @@ def set_key():
                 db.session.commit()
                 return jsonify(['CHANGED PASSWORD', newpassword])
             else:
-                return 'Wrong old password!'
+                return jsonify(['ERROR','Wrong old password!'])
         else:
             data = TinyWebDB(tag='dbpass', value=newpassword)
             db.session.add(data)
             db.session.commit()
             return jsonify(['SET PASSWORD', newpassword])
-    return 'No new password is specified!'
+    return jsonify(['ERROR','No new password is specified!'])
+
+
+# -------------------------
+#  Get All Data
+#  - Return everything from database. This method also includes the database password record.
+#  - Because of above reason, you need to set a password before using this feature.
+# -------------------------
+@app.route('/auth/data', methods=['POST'])
+def get_data():
+    getpassword = TinyWebDB.query.filter_by(tag='dbpass').first()
+    if getpassword:
+        # --------------------
+        password = request.form['pass']
+        if password != getpassword.value:
+            return jsonify(['ERROR','Wrong password!'])
+        # --------------------
+        tags = TinyWebDB.query.all()
+        taglist = []
+        valuelist = []
+        for tg in tags:
+           taglist.append(tg.tag)
+           valuelist.append(tg.value)
+        return jsonify(['DATA', taglist, valuelist])
+    return jsonify(['ERROR','You need to set a password first to use this feature!'])
 
 
 # -------------------------
 #  Get All Tags
-#  - Return all values
+#  - Return all tags from database, removes the database password record for security.
 # -------------------------
 @app.route('/getall', methods=['POST'])
 def get_all():
@@ -144,12 +168,15 @@ def get_all():
         # --------------------
         password = request.form['pass']
         if password != getpassword.value:
-            return 'Wrong password!'
+            return jsonify(['ERROR','Wrong password!'])
         # --------------------
     tags = TinyWebDB.query.all()
     taglist = []
     for tg in tags:
         taglist.append(tg.tag)
+    # Delete the dbpass tag from result because that record contains the password of database. 
+    # Nobody wants to get the tag of that record, right?
+    taglist.remove('dbpass')
     return jsonify(['TAGS', taglist])
 
 
@@ -168,8 +195,8 @@ def remove_key():
             db.session.commit()
             return jsonify(['DELETED PASSWORD', password])
         else:
-            return 'Wrong password!'
-    return 'You need to set a password first to use this feature!'
+            return jsonify(['ERROR','Wrong password!'])
+    return jsonify(['ERROR','You need to set a password first to use this feature!'])
         
 
 # -------------------------
