@@ -77,7 +77,7 @@ def get_value():
                     return 'Wrong password!'
             # --------------------
             value = TinyWebDB.query.filter_by(tag=tag).first().value
-            return jsonify(['VALUE', tag, value])
+            return jsonify(['GOT', tag, value])
     return 'Invalid Tag!'
 
 
@@ -147,10 +147,10 @@ def get_all():
             return 'Wrong password!'
         # --------------------
     tags = TinyWebDB.query.all()
-    text = ""
+    taglist = []
     for tg in tags:
-        text = text + tg.tag + ","
-    return text
+        taglist.append(tg.tag)
+    return jsonify(['TAGS', taglist])
 
 
 # -------------------------
