@@ -124,7 +124,8 @@ def get_all():
         taglist.append(tg.tag)
     # Delete the dbpass tag from result because that record contains the password of database. 
     # Nobody wants to get the tag of that record, right?
-    taglist.remove('dbpass')
+    if 'dbpass' in tags:
+        taglist.remove('dbpass')
     return jsonify(['TAGS', taglist])
 
 
