@@ -1,5 +1,4 @@
 # AsteroidDB
-***AsteroidDB is a WIP project for now. It will work if you deploy the app with Heroku of course, but some features are still missing. But, you can always update your app. So it is up to you to use AsteroidDB or not for now.***
 
 Why people just can't set up a simple and free database for apps/softwares? They are actually just saving values and getting the values by using the tags. So there is no reason to providing an almost impossible solution for creating online database. We are in 2019. 
 
