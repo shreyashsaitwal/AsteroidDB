@@ -155,8 +155,8 @@ def delete_entry():
 
 
 # -------------------------
-#  Delete All Records
-#  - Deletes every record from database, this method also removes password.
+#  Format Database
+#  - Deletes every record from database, and remove password protection.
 # -------------------------
 @app.route('/format', methods=['POST'])
 def delete_all():
