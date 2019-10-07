@@ -157,7 +157,7 @@ def delete_entry():
 #  Delete All Records
 #  - Deletes every record from database, this method also removes password.
 # -------------------------
-@app.route('/deleteall', methods=['POST'])
+@app.route('/format', methods=['POST'])
 def delete_all():
     getpassword = TinyWebDB.query.filter_by(tag='dbpass').first()
     if getpassword:
@@ -168,15 +168,11 @@ def delete_all():
         # --------------------
     try:
         count = db.session.query(TinyWebDB).delete()
-        if getpassword:
-            data = TinyWebDB(tag='dbpass', value=getpassword)
-            db.session.add(data)
-            count = count - 1
         db.session.commit()
         return jsonify(['DELETED', count])
     except:
         db.session.rollback()
-    return jsonify(['ERROR', 'Something went wrong while performing this action.'])
+        return jsonify(['ERROR', 'Something went wrong while performing this action.'])
     
 
 
