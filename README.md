@@ -25,10 +25,13 @@ Every checkmark presents a method. A checked box means that method is implemente
    - [x] `IsLocked` *(returns true if database is locked, otherwise false)*
 - **Delete**
    - [x] `Delete`
-   - [x] `Format` *(factory state of database; deletes everything)
+   - [x] `Format` *(factory state of database; deletes everything)*
 
-### Integrations
-- [ ] App Inventor Extension
+### Others
+- **Integrations**
+   - [ ] App Inventor Extension
+- **Dashboard**
+   - [ ] AsteroidDB Web Dashboard *(for editing database online)*
 
 ***
 
