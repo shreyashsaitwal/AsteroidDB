@@ -13,19 +13,19 @@ Every checkmark presents a method. A checked box means that method is implemente
 
 ### Methods
 - **Store**
-   - [x] Store Record
+   - [x] `Store`
 - **Get**
-   - [x] Get Value from Tag
-   - [x] Get All Tags
-   - [x] Get All Data *(which contains all tags alongs with values)*
+   - [x] `GetValue`
+   - [x] `GetAll`
+   - [x] `GetAllData` *(which contains all tags alongs with values)*
 - **Authorization**
-   - [x] Set/Change Password
-   - [x] Delete/Unlock Password
+   - [x] `Password`
+   - [x] `DeletePassword`
 - **Informational**
-   - [x] Is Locked? *(returns true if database is locked, otherwise false)*
+   - [x] `IsLocked` *(returns true if database is locked, otherwise false)*
 - **Delete**
-   - [x] Delete Record
-   - [x] Clear Database
+   - [x] `Delete`
+   - [x] `Format` *(factory state of database; deletes everything)
 
 ### Integrations
 - [ ] App Inventor Extension
