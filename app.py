@@ -168,12 +168,9 @@ def delete_all():
         # --------------------
     try:
         dataa = TinyWebDB.query.filter(TinyWebDB.tag != 'dbpass').all()
-        taglist = []
-        for tg in dataa:
-            taglist.append(tg.tag)
         db.session.delete(dataa)
         db.session.commit()
-        return jsonify(['DELETED', taglist])
+        return jsonify(['DELETED', 'Deleted!'])
     except:
         db.session.rollback()
     return jsonify(['ERROR', 'Something went wrong while deleting the database.'])
