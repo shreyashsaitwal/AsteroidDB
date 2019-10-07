@@ -167,9 +167,13 @@ def delete_all():
             return jsonify(['ERROR','Wrong password!'])
         # --------------------
     try:
-        count = db.session.query(TinyWebDB).delete()
+        dataa = TinyWebDB.query.filter(TinyWebDB.tag != 'dbpass').all()
+        taglist = []
+        for tg in dataa:
+            taglist.append(tg.tag)
+        db.session.delete(dataa)
         db.session.commit()
-        return jsonify(['DELETED', count])
+        return jsonify(['DELETED', taglist])
     except:
         db.session.rollback()
     return jsonify(['ERROR', 'Something went wrong while deleting the database.'])
