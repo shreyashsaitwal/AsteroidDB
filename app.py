@@ -107,6 +107,28 @@ def delete_entry():
 
 
 # -------------------------
+#  Delete All Records
+#  - Deletes every record from database, this method also removes password.
+# -------------------------
+@app.route('/deleteall', methods=['POST'])
+def delete_all():
+    getpassword = TinyWebDB.query.filter_by(tag='dbpass').first()
+    if getpassword:
+        # --------------------
+        password = request.form['pass']
+        if password != getpassword.value:
+            return jsonify(['ERROR','Wrong password!'])
+        # --------------------
+    dataa = TinyWebDB.query.filter_by(tag!='dbpass')
+    taglist = []
+    for tg in dataa:
+        taglist.append(tg.tag)
+    db.session.delete(dataa)
+    db.session.commit()
+    return jsonify(['DELETED', taglist])
+
+
+# -------------------------
 #  Set/Change Password
 #  - If you set a password, you need to type a password when you modify the database.
 #  - The password will be saved in the same table along with other data called "dbpass".
