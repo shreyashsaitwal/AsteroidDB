@@ -170,7 +170,7 @@ def delete_all():
     try:
         count = db.session.query(TinyWebDB).delete()
         db.session.commit()
-        return jsonify(['DELETED', count])
+        return jsonify(['FORMATTED', count])
     except:
         db.session.rollback()
         return jsonify(['ERROR', 'Something went wrong while performing this action.'])
