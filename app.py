@@ -82,80 +82,6 @@ def get_value():
 
 
 # -------------------------
-#  Delete Record
-#  - Delete a record from tag.
-# -------------------------
-@app.route('/delete', methods=['POST'])
-def delete_entry():
-    tag = request.form['tag']
-    getpassword = TinyWebDB.query.filter_by(tag='dbpass').first()
-    if tag:
-        if tag == 'dbpass':
-            return jsonify(['ERROR','Not possible to do any action to password record!'])
-        else:
-            # --------------------
-            if getpassword:
-                password = request.form['pass']
-                if password != getpassword.value:
-                    return jsonify(['ERROR','Wrong password!'])
-            # --------------------
-            deleted = TinyWebDB.query.filter_by(tag=tag).first()
-            db.session.delete(deleted)
-            db.session.commit()
-            return jsonify(['DELETED', tag])
-    return jsonify(['ERROR','Not found the tag.'])
-
-
-# -------------------------
-#  Delete All Records
-#  - Deletes every record from database, this method also removes password.
-# -------------------------
-@app.route('/deleteall', methods=['POST'])
-def delete_all():
-    getpassword = TinyWebDB.query.filter_by(tag='dbpass').first()
-    if getpassword:
-        # --------------------
-        password = request.form['pass']
-        if password != getpassword.value:
-            return jsonify(['ERROR','Wrong password!'])
-        # --------------------
-    dataa = TinyWebDB.query.filter_by(tag!='dbpass')
-    taglist = []
-    for tg in dataa:
-        taglist.append(tg.tag)
-    db.session.delete(dataa)
-    db.session.commit()
-    return jsonify(['DELETED', taglist])
-
-
-# -------------------------
-#  Set/Change Password
-#  - If you set a password, you need to type a password when you modify the database.
-#  - The password will be saved in the same table along with other data called "dbpass".
-#  - If you forgot the password, there is no way to recover it.
-# -------------------------
-@app.route('/auth/password', methods=['POST'])
-def set_key():
-    newpassword = request.form['newpass']
-    getpassword = TinyWebDB.query.filter_by(tag='dbpass').first()
-    if newpassword:
-        if getpassword:
-            oldpassword = request.form['oldpass']
-            if getpassword.value == oldpassword:
-                getpassword.value = newpassword
-                db.session.commit()
-                return jsonify(['CHANGED PASSWORD', newpassword])
-            else:
-                return jsonify(['ERROR','Wrong old password!'])
-        else:
-            data = TinyWebDB(tag='dbpass', value=newpassword)
-            db.session.add(data)
-            db.session.commit()
-            return jsonify(['SET PASSWORD', newpassword])
-    return jsonify(['ERROR','No new password is specified!'])
-
-
-# -------------------------
 #  Get All Data
 #  - Return everything from database. This method also includes the database password record.
 #  - Because of above reason, you need to set a password before using this feature.
@@ -200,6 +126,81 @@ def get_all():
     # Nobody wants to get the tag of that record, right?
     taglist.remove('dbpass')
     return jsonify(['TAGS', taglist])
+
+
+# -------------------------
+#  Delete Record
+#  - Delete a record from tag.
+# -------------------------
+@app.route('/delete', methods=['POST'])
+def delete_entry():
+    tag = request.form['tag']
+    getpassword = TinyWebDB.query.filter_by(tag='dbpass').first()
+    if tag:
+        if tag == 'dbpass':
+            return jsonify(['ERROR','Not possible to do any action to password record!'])
+        else:
+            # --------------------
+            if getpassword:
+                password = request.form['pass']
+                if password != getpassword.value:
+                    return jsonify(['ERROR','Wrong password!'])
+            # --------------------
+            deleted = TinyWebDB.query.filter_by(tag=tag).first()
+            db.session.delete(deleted)
+            db.session.commit()
+            return jsonify(['DELETED', tag])
+    return jsonify(['ERROR','Not found the tag.'])
+
+
+# -------------------------
+#  Delete All Records
+#  - Deletes every record from database, this method also removes password.
+# -------------------------
+@app.route('/deleteall', methods=['POST'])
+def delete_all():
+    getpassword = TinyWebDB.query.filter_by(tag='dbpass').first()
+    if getpassword:
+        # --------------------
+        password = request.form['pass']
+        if password != getpassword.value:
+            return jsonify(['ERROR','Wrong password!'])
+        # --------------------
+    try:
+        count = db.session.query(TinyWebDB).delete()
+        db.session.commit()
+        return jsonify(['DELETED', count])
+    except:
+        db.session.rollback()
+    return jsonify(['ERROR', 'Something went wrong while deleting the database.'])
+    
+
+
+# -------------------------
+#  Set/Change Password
+#  - If you set a password, you need to type a password when you modify the database.
+#  - The password will be saved in the same table along with other data called "dbpass".
+#  - If you forgot the password, there is no way to recover it.
+# -------------------------
+@app.route('/auth/password', methods=['POST'])
+def set_key():
+    newpassword = request.form['newpass']
+    getpassword = TinyWebDB.query.filter_by(tag='dbpass').first()
+    if newpassword:
+        if getpassword:
+            oldpassword = request.form['oldpass']
+            if getpassword.value == oldpassword:
+                getpassword.value = newpassword
+                db.session.commit()
+                return jsonify(['CHANGED PASSWORD', newpassword])
+            else:
+                return jsonify(['ERROR','Wrong old password!'])
+        else:
+            data = TinyWebDB(tag='dbpass', value=newpassword)
+            db.session.add(data)
+            db.session.commit()
+            return jsonify(['SET PASSWORD', newpassword])
+    return jsonify(['ERROR','No new password is specified!'])
 
 
 # -------------------------
