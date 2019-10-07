@@ -26,7 +26,7 @@ Every checkmark presents a method. A checked box means that method is implemente
    - [x] Is Locked? *(returns true if database is locked, otherwise false)*
 - **Delete**
    - [x] Delete Record
-   - [ ] Clear Database
+   - [x] Clear Database
 
 ### Integrations
 - [ ] App Inventor Extension
