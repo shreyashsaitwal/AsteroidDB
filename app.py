@@ -221,6 +221,22 @@ def remove_key():
         else:
             return jsonify(['ERROR','Wrong password!'])
     return jsonify(['ERROR','You need to set a password first to use this feature!'])
+
+
+# -------------------------
+#  Is Password True?
+#  - Useful for applications. Returns 'true' if password is correct. Otherwise; 'false'.
+# -------------------------
+@app.route('/istrue', methods=['POST'])
+def is_true():
+    password = request.form['pass']
+    getpassword = TinyWebDB.query.filter_by(tag='dbpass').first()
+    if getpassword:
+        # --------------------
+        if password != getpassword.value:
+            return jsonify(['IS CORRECT','false'])
+        # --------------------
+    return jsonify(['IS CORRECT','true'])
         
 
 # -------------------------
