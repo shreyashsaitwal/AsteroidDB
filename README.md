@@ -23,6 +23,7 @@ Every checkmark presents a method. A checked box means that method is implemente
    - [x] `DeletePassword`
 - **Informational**
    - [x] `IsLocked` *(returns true if database is locked, otherwise false)*
+   - [x] `IsTrue` *(returns true if password is correct)*
 - **Delete**
    - [x] `Delete`
    - [x] `Format` *(factory state of database; deletes everything)*
