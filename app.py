@@ -24,7 +24,7 @@ db.session.commit()
 
 @app.route('/')
 def hello_world():
-    return ''
+    return render_template('dashboard.html')
 
 
 # -------------------------
