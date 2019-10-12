@@ -8,6 +8,7 @@ It can be installed on [Heroku](https://www.heroku.com/) with one click, if you 
 
 **You can find everything about AsteroidDB in [Wiki](https://github.com/ysfchn/AsteroidDB/wiki).**
 
+### Get AsteroidDB
 [![Deploy](https://www.herokucdn.com/deploy/button.png)](https://heroku.com/deploy?template=https://github.com/ysfchn/AsteroidDB)
 
 ## Progress
@@ -37,10 +38,6 @@ Every checkmark presents a method. A checked box means that method is implemente
    - [ ] AsteroidDB Web Dashboard *(for editing database online)* -- coming soon
 
 ***
-
-### Get AsteroidDB
-
-[![Deploy](https://www.herokucdn.com/deploy/button.png)](https://heroku.com/deploy?template=https://github.com/ysfchn/AsteroidDB)
 
 #### Who is AsteroidDB for?
 
