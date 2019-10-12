@@ -34,7 +34,7 @@ Every checkmark presents a method. A checked box means that method is implemente
 - **Integrations**
    - [ ] App Inventor Extension
 - **Dashboard**
-   - [ ] AsteroidDB Web Dashboard *(for editing database online)*
+   - [ ] AsteroidDB Web Dashboard *(for editing database online)* -- coming soon
 
 ***
 
