@@ -24,7 +24,7 @@ db.session.commit()
 
 @app.route('/')
 def hello_world():
-    return render_template('dashboard.html')
+    return render_template('Yay! Your AsteroidDB instance is working perfectly!')
 
 
 # -------------------------
