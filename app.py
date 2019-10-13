@@ -59,41 +59,6 @@ def store_a_value():
 
 
 # -------------------------
-#  Store All
-#  - Creates a new record for every item according to given tag list and value list.
-#     * taglist - All tags as array
-#     * valuelist - All values as array
-# -------------------------
-@app.route('/storeall', methods=['POST'])
-def store_all():
-    taglist = request.form.getlist('taglist[]')
-    valuelist = request.form.getlist('valuelist[]')
-    getpassword = TinyWebDB.query.filter_by(tag='dbpass').first()
-    if taglist:
-        if 'dbpass' in taglist:
-            return jsonify(['ERROR','Not possible to do any action to password record!'])
-        else if len(taglist) != len(valuelist)
-            return jsonify(['ERROR','There is an error in lists.'])
-        else:
-            # --------------------
-            if getpassword:
-                password = request.form['pass']
-                if password != getpassword.value:
-                    return jsonify(['ERROR','Wrong password!'])
-            # --------------------
-            for i in range(len(taglist)):
-                existing_tag = TinyWebDB.query.filter_by(tag=taglist[i]).first()
-                if existing_tag:
-                    existing_tag.value = value
-                else:
-                    data = TinyWebDB(tag=taglist[i], value=valuelist[i])
-                    db.session.add(data)
-            db.session.commit()
-        return jsonify(['STORED ALL', taglist, valuelist])
-    return jsonify(['ERROR','Not found the tag list.'])
-
-
-# -------------------------
 #  Get Value
 #  - Get the value from tag.
 # -------------------------
