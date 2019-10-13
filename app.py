@@ -23,8 +23,8 @@ db.create_all()
 db.session.commit()
 
 @app.route('/')
-def hello_world():
-    return render_template('Yay! Your AsteroidDB instance is working perfectly!')
+def main_method():
+    return 'Yay! Your AsteroidDB instance is working perfectly!'
 
 
 # -------------------------
