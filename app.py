@@ -130,6 +130,25 @@ def get_all():
 
 
 # -------------------------
+#  Count All Records
+#  - Returns a number that tells you how many records there are in database. 
+#  - Decrease the number with 1 if you do not want the dbpass record to be included.
+# -------------------------
+@app.route('/count')
+def count_all():
+    getpassword = TinyWebDB.query.filter_by(tag='dbpass').first()
+    if getpassword:
+        # --------------------
+        password = request.form['pass']
+        if password != getpassword.value:
+            return jsonify(['ERROR','Wrong password!'])
+        # --------------------
+    tags = TinyWebDB.query.all()
+    resl = len(tags)
+    return jsonify(['COUNT', resl])
+
+
+# -------------------------
 #  Delete Record
 #  - Delete a record from tag.
 # -------------------------
