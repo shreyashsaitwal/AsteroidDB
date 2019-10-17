@@ -2,10 +2,7 @@
 import os
 
 from flask import Flask, request, jsonify
-from flask import render_template
 from flask_sqlalchemy import SQLAlchemy
-
-import requests
 
 app = Flask(__name__)
 app.config['SQLALCHEMY_DATABASE_URI'] = os.environ['DATABASE_URL']
@@ -27,7 +24,7 @@ db.session.commit()
 
 @app.route('/')
 def main_method():
-    return render_template('index.html')
+    return 'AsteroidDB works perfectly!'
 
 
 # -------------------------
