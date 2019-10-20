@@ -1,5 +1,4 @@
 # AsteroidDB
-***AsteroidDB is a WIP project for now. It will work if you deploy the app with Heroku of course, but some features are still missing. But, you can always update your app. So it is up to you to use AsteroidDB or not for now.***
 
 Why people just can't set up a simple and free database for apps/softwares? They are actually just saving values and getting the values by using the tags. So there is no reason to providing an almost impossible solution for creating online database. We are in 2019. 
 
@@ -7,35 +6,39 @@ So welcome to a new generation in database service. If you want a too simple dat
 
 It can be installed on [Heroku](https://www.heroku.com/) with one click, if you don't want to deal with setting up thing (as I did). AsteroidDB is using [Flask](http://flask.pocoo.org/) micro-framework and written in Python, so you can understand that how it is easy to improve the code.
 
-**You can find everything about AsteroidDB in [Wiki](https://github.com/ysfchn/AsteroidDB/wiki).**
+[<img src="asteroiddb-badge.png" width="350" height="100">](https://github.com/ysfchn/AsteroidDB/wiki)
+
+..or use Heroku one-click deploy button instead of above cool button.
+
+[![Deploy](https://www.herokucdn.com/deploy/button.png)](https://heroku.com/deploy?template=https://github.com/ysfchn/AsteroidDB)
 
 ## Progress
 Every checkmark presents a method. A checked box means that method is implemented. You can a detailed table about all methods in [this Wiki page](https://github.com/ysfchn/AsteroidDB/wiki#current-methods).
 
 ### Methods
 - **Store**
-   - [x] Store Record
+   - [x] `Store`
 - **Get**
-   - [x] Get Value from Tag
-   - [x] Get All Tags
-   - [x] Get All Data *(which contains all tags alongs with values)*
+   - [x] `GetValue`
+   - [x] `GetAll`
+   - [x] `GetAllData` *(which contains all tags alongs with values)*
 - **Authorization**
-   - [x] Set/Change Password
-   - [x] Delete/Unlock Password
+   - [x] `Password`
+   - [x] `DeletePassword`
 - **Informational**
-   - [x] Is Locked? *(returns true if database is locked, otherwise false)*
+   - [x] `IsLocked` *(returns true if database is locked, otherwise false)*
+   - [x] `IsTrue` *(returns true if password is correct)*
 - **Delete**
-   - [x] Delete Record
-   - [ ] Clear Database
+   - [x] `Delete`
+   - [x] `Format` *(factory state of database; deletes everything)*
 
-### Integrations
-- [ ] App Inventor Extension
+### Others
+- **Integrations**
+   - [ ] App Inventor Extension
+- **Dashboard**
+   - [ ] AsteroidDB Web Dashboard *(for editing database online)* -- coming soon
 
 ***
-
-### Get AsteroidDB
-
-[![Deploy](https://www.herokucdn.com/deploy/button.png)](https://heroku.com/deploy?template=https://github.com/ysfchn/AsteroidDB)
 
 #### Who is AsteroidDB for?
 
